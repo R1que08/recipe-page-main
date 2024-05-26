@@ -1,0 +1,207 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400..900&family=Young+Serif&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400,600..700&display=swap');
+/*acima são as fontes que ultilizo no projeto, pegas do google fonts*/
+
+* {
+    padding: 0;
+    margin: 0;
+    /*esses dois acima nao sei para que serve ainda, mas ja estavam presente em 2 dos meus projetos */
+    box-sizing: border-box;
+} 
+
+:root {
+
+    --Nutmeg: hsl(14, 45%, 36%);
+
+    --Dark-Raspberry: hsl(332, 51%, 32%);
+        
+    --White: hsl(0, 0%, 100%);
+    --Rose-White: hsl(330, 100%, 98%);
+
+    --Eggshell: hsl(30, 54%, 90%);
+
+    --Light-Grey: hsl(30, 18%, 87%);
+
+    --Wenge-Brown: hsl(30, 10%, 34%);
+
+    --Dark-Charcoal: hsl(24, 5%, 18%);
+/*nao tenho certeza ainda,mas parece que atraves desse "code" eu to importando as cores para estilizar igual as fontes, no meu entendimento é isso.
+
+aparentemente eu estava certo, o var utiliznado dps vem de variaveis, para permiitir que voce mude a cor da variavel com desse exato format "--nome-da-cor: difinição da cor;" sem esquecer dos ;
+*/
+}
+
+body {
+    background-color: var(--Eggshell);
+    min-height: 100vh;
+     font-family:"Outfit", sans-serif ;
+     display: grid;
+     place-content: center;
+     /*dentro do body o place contente esta centralizando o conteudo no centro da pagina*/
+}
+img{ 
+    max-width: 100%;
+    display: block;
+    /*card é onde eu queria reprensentar a img do omelete o max widht quer dizer o tamanho maximo que a img pode ocupar*/
+}
+
+h1, h2 {
+    font-family: "Young serif", serif;
+    /*serif sempre vai no final do font-family aparentemente*/
+
+    font-weight: 400; 
+    /*aqui é para definir as condiçoes da fontes de texto do h1 e do h2 */
+}
+
+h1 {
+    color: var(--Dark-Charcoal);
+    font-size: 2.8rem;
+    /*Nessa coluna alteramos tudo que esta em "h1"
+    rem em css quer dizer "tamanho da fonte relativo ao elemento da raiz", ele em 2.8 sera 2.8 vezes maior doq a fonte orig, exemplo se for 16px o padrao a fonte vai aumentar para 44,8*/
+}
+h2 {
+    color: var(--Nutmeg);
+    margin-bottom: 1rem;
+    /*o margimbottom aplica uma margem inferior de 2,8 vezes o tamanho da fonte do elemento raiz */
+}
+
+.recipe-step{
+    margin: 1rem 0;
+    /*quando se trata de margin, estamos falando do espaço entre o elemento selecionado e os elementos ao seu redor.Ela controla o espaço entre a borda externa do elemento e as bordas internas dos elementos vizinhos ou das bordas da caixa pai*/
+    
+}
+.recipe-step{
+    margin-top: 1rem;
+    /*margin top defini a margem superior do elemento*/
+
+}
+ul {
+    padding: 1.25rem;
+    /*o padding é usado para definir o espaço  entre o conteudo de um elemento e sua borda ela controla o entre a borda interna do elemento e o conteudo dentro dele*/
+}
+ul li::marker {
+    /*marker (pseudo classe) é usado como marcador para estilizar lista*/
+    color: var(--Nutmeg);
+    font-weight: bold;
+    /*peso da fonte como negrito*/
+}
+ul li span{
+    /*span ´´e uma tag d elemento de linha (inline), oq significa que elea nao inicia uma nova linha no layout ela e frequentemente usada para aplicar estilos especificos a partes de texto ou para agrupar  elementos inline para aplicar estilos a elescom um todo. voce pode usar o span para aplicar estilos a um paragrafo em especifico por exemplo*/
+    color: var(--Wenge-Brown);
+    margin-left: 1rem;
+    font-weight: 700;
+
+}
+
+hr{
+    margin: 1.5rem 0;
+    border: 1px solid var(--Light-Grey);
+}
+.container {
+    max-width: 800px;
+    background-color: var(--White);
+    margin: 2rem;
+    border-radius: 1rem;
+}
+.container .recipe-img {
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    /*overflow hidden serve para controlar o comportamento de qlq conteudo que exceda o tamanho do elemento pai.isso faz com que o qlq conteudo transbordado seja ocultado, serve muito bem para criar efeitos de recorte em imgs, textos ou videos*/
+}
+
+.container .recipe-img img {
+    border-radius: 1rem;
+    /*borde radius para deixar as bordas redondas*/
+}
+
+.recipe-information {
+    padding: 0rem 2rem 2rem 2rem;
+}
+.description {
+    margin: 1.5rem 0;
+}
+
+.preparation-time {
+    /*nao pode ter nenhuma alteração nem acento, nem letra maiusculas!!*/
+
+background-color: var(--Rose-White);
+padding: 1.25rem;
+border-radius: 1rem;
+
+}
+.preparation-time h3 {
+  color: var(--Dark-Raspberry); 
+  margin-bottom: .75rem;
+  
+}
+.preparation-time ul li::marker {
+    color: var(--Dark-Raspberry);
+}
+.Ingredients li {
+    margin-bottom: .5rem;
+}
+
+.Ingredients li span{
+    font-weight: initial;
+}
+
+.Instructions .item {
+    padding: .5rem;
+    margin-bottom: .5rem;
+    display: flex;
+
+}
+.Instructions .item .num {
+    color: var(--Nutmeg);
+    margin-right: 1rem;
+    font-weight: 700;
+}
+.Instructions .item p span {
+    font-weight: 700;
+}
+.Nutrition-step .values {
+    margin-bottom: 1rem;
+}
+.Nutrition-step .item{
+    padding: .75rem 2rem;
+    display: flex;
+    border-bottom: 1px solid var(--Light-Grey);
+}
+
+.Nutrition-step .item:last-child{
+    /*last child é um seletor seleciona o ultimo elemento filho de seu elemento pai*/
+    border-bottom: 0;
+
+}
+
+.Nutrition-step .item p:nth-child(2){
+    color: var(--Nutmeg);
+    font-weight: 700;
+}
+
+.Nutrition-step .item > *{
+    /*a chavinha seleciona todos os elementos filhos*/
+    width: 100px;
+    margin-right: auto;
+
+}
+@media (max-width: 540px) {
+    h1{
+        margin-top: 2rem;
+    }
+    .container {
+        margin: 0;
+    }
+
+    .conteiner .recipe-img {
+        padding: 0;
+        border-radius: 0;
+    } 
+    .container .recipe-img img {
+        border-radius: 0;
+    }
+}
